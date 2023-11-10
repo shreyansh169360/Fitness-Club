@@ -4,7 +4,7 @@ import Carousel from "react-elastic-carousel";
 import Loader from "./Loader";
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-  if (!exerciseVideos.length) return <Loader/>
+  if (!exerciseVideos?.length) return <Loader/>
   return (
     <Box
       sx={{
@@ -31,14 +31,14 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
             <a
               key={index}
               className="exercise-video"
-              href={`https://www.youtube.com/watch?v=${item.video.videoId}`}
+              href={`https://www.youtube.com/watch?v=${item?.video?.videoId}`}
               target="_blank"
               rel="noreferrer"
               style={{ justifyContent: "center", margin: "0 40px" }}
             >
               <img
-                src={item.video.thumbnails[0].url}
-                alt={item.video.title}
+                src={item?.video?.thumbnails[0]?.url}
+                alt={item?.video?.title}
                 style={{ borderRadius: "5%" }}
               />
               <Box>
@@ -52,7 +52,7 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
                   variant="h7"
                   color="#000"
                 >
-                  {item.video.channelName}
+                  {item?.video?.channelName}
                 </Typography>
               </Box>
             </a>

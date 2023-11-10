@@ -31,7 +31,7 @@ const Detail = ({ exerciseDetail }) => {
             Instructions.
           </Typography>
           <List component="nav" aria-label="mailbox folders">
-            {exerciseDetail.instructions?.map((ins) => {
+            {exerciseDetail?.instructions?.map((ins) => {
               return (
                 <>
                   <ListItem button>

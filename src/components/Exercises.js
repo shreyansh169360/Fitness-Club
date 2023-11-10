@@ -36,11 +36,11 @@ const Exercises = ({ setexercises, bodyPart, exercises }) => {
 
   const indexOfLastExercise = currentPage * 8;
   const indexOfFirstExercise = indexOfLastExercise - 8;
-  const currentExercisesArray = exercises.slice(
+  const currentExercisesArray = exercises?.slice(
     indexOfFirstExercise,
     indexOfLastExercise
   );
-  if(exercises.length <= 0) return <Loader/>
+  if(exercises?.length <= 0) return <Loader/>
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
       <Typography variant="h4" mb="46px">
@@ -57,7 +57,7 @@ const Exercises = ({ setexercises, bodyPart, exercises }) => {
         })}
       </Stack>
       <Stack mt="100px" alignItems="center">
-        {exercises.length > 8 && (
+        {exercises?.length > 8 && (
           <Pagination
             color="standard"
             shape="rounded"
